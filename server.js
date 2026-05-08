@@ -77,13 +77,16 @@ const server = http.createServer((req, res) => {
         }
 
         const systemPrompt = `从用户的自我介绍中提取信息，严格按以下JSON格式返回（不要markdown，不要代码块，只返回JSON文本）：
-{"name":"","major":"","bio":"","skills":[],"projects":[]}
+{"name":"","major":"","bio":"","skills":[],"projects":[],"work_experience":[],"education":[],"certifications":[]}
 规则：
 - name: 提取姓名，找不到则返回 null
 - major: 提取专业/方向，找不到则返回 null
 - bio: 写一句精简的个人简介（可以润色但不要编造）
 - skills: 只提取原文提到的技能，没有则[]
 - projects: 提取项目，最多3个，没有则[]
+- work_experience: 提取工作经历（公司+职位+时间），没有则[]
+- education: 提取教育背景（学校+专业+时间），没有则[]
+- certifications: 提取证书/资质名称，没有则[]
 - 不要编造原文中没有的信息
 - 注意：null 不要加引号，空数组用 []`;
 

@@ -339,6 +339,10 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899);
   border-color: transparent;
 }
+.swatch-business {
+  background: #1A1A2E;
+  border-color: #E2E5EA;
+}
 
 /* ============================================
    Buttons
@@ -510,6 +514,50 @@ a { color: inherit; text-decoration: none; }
 .preview-skills-section .preview-section-title {
   margin-bottom: 10px;
 }
+.preview-experience-section,
+.preview-education-section,
+.preview-certifications-section {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+}
+.preview-experience-section .preview-section-title,
+.preview-education-section .preview-section-title,
+.preview-certifications-section .preview-section-title {
+  margin-bottom: 10px;
+}
+.timeline-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--preview-border);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.timeline-item:last-child {
+  border-bottom: none;
+}
+.timeline-item .timeline-title {
+  font-weight: 600;
+  color: var(--preview-text);
+}
+.timeline-item .timeline-sub {
+  color: var(--preview-text-secondary);
+  font-size: 13px;
+  margin-top: 2px;
+}
+.certs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cert-tag {
+  display: inline-flex;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid transparent;
+}
 .skills-tags {
   display: flex;
   flex-wrap: wrap;
@@ -589,7 +637,10 @@ a { color: inherit; text-decoration: none; }
   color: var(--preview-text);
   border-bottom: 1px solid var(--preview-border);
 }
-.preview-template-minimal .preview-skills-section {
+.preview-template-minimal .preview-skills-section,
+.preview-template-minimal .preview-experience-section,
+.preview-template-minimal .preview-education-section,
+.preview-template-minimal .preview-certifications-section {
   border-bottom: 1px solid var(--preview-border);
 }
 .preview-template-minimal .preview-section-title {
@@ -630,7 +681,10 @@ a { color: inherit; text-decoration: none; }
   border-image-slice: 1;
   padding-bottom: 24px;
 }
-.preview-template-colorful .preview-skills-section {
+.preview-template-colorful .preview-skills-section,
+.preview-template-colorful .preview-experience-section,
+.preview-template-colorful .preview-education-section,
+.preview-template-colorful .preview-certifications-section {
   border-bottom: 2px dashed transparent;
   border-image: linear-gradient(90deg, var(--primary), #8B5CF6);
   border-image-slice: 1;
@@ -651,6 +705,128 @@ a { color: inherit; text-decoration: none; }
 }
 .preview-template-colorful .project-card:nth-child(3) {
   background: linear-gradient(135deg, var(--preview-card-bg), rgba(16,185,129,0.06));
+}
+
+/* ============================================
+   Template: Business (Shopify 风格)
+   ============================================ */
+.preview-template-business {
+  --business-primary: #1A1A2E;
+  --business-primary-light: #F0F2F5;
+  --business-accent: #2D5BFF;
+  --business-text: #111111;
+  --business-text-secondary: #6B7280;
+  --business-bg: #FFFFFF;
+  --business-card-bg: #F8F9FB;
+  --business-border: #E2E5EA;
+}
+@media (prefers-color-scheme: dark) {
+  .preview-template-business {
+    --business-primary: #E4E6EA;
+    --business-primary-light: #2A2D34;
+    --business-accent: #5B7FFF;
+    --business-text: #F1F3F5;
+    --business-text-secondary: #9CA3AF;
+    --business-bg: #1E2028;
+    --business-card-bg: #262831;
+    --business-border: #353840;
+  }
+}
+.preview-template-business .preview-avatar {
+  width: 76px; height: 76px; border-radius: 20px;
+  background: var(--business-primary);
+  color: var(--business-bg);
+  font-size: 30px; font-weight: 600;
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+.preview-template-business .preview-name {
+  font-size: 30px; font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  color: var(--business-text);
+  font-family: Inter, 'SF Pro Text', system-ui, -apple-system, sans-serif;
+}
+.preview-template-business .preview-major {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--business-bg);
+  display: inline-block;
+  background: var(--business-accent);
+  padding: 4px 16px;
+  border-radius: 6px;
+  letter-spacing: 0.2px;
+}
+.preview-template-business .preview-bio {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--business-text-secondary);
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--business-border);
+}
+.preview-template-business .preview-skills-section,
+.preview-template-business .preview-experience-section,
+.preview-template-business .preview-education-section,
+.preview-template-business .preview-certifications-section {
+  border-bottom: 1px solid var(--business-border);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+}
+.preview-template-business .preview-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--business-text-secondary);
+  margin-bottom: 14px;
+  font-family: Inter, 'SF Pro Text', system-ui, sans-serif;
+}
+.preview-template-business .skill-tag {
+  background: var(--business-primary-light) !important;
+  color: var(--business-text) !important;
+  border-color: var(--business-border) !important;
+  border-radius: 6px;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.preview-template-business .project-card {
+  background: var(--business-bg);
+  border: 1px solid var(--business-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  color: var(--business-text);
+  font-size: 14px;
+  line-height: 1.6;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.preview-template-business .preview-social {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+}
+.preview-template-business .preview-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--business-border);
+  color: var(--business-text-secondary);
+  transition: all 0.2s;
+}
+.preview-template-business .preview-social a:hover {
+  border-color: var(--business-accent);
+  color: var(--business-accent);
+  background: var(--business-primary-light);
+}
+.preview-template-business .preview-social a svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* ============================================
@@ -906,7 +1082,7 @@ a { color: inherit; text-decoration: none; }
   <div class="info-modal">
     <button class="info-close" id="infoClose">✕</button>
     <h3>关于 PortfolioAI</h3>
-    <p>PortfolioAI 由一名动画专业大二学生设计开发，旨在帮助年轻创作者快速生成个人作品集网站。全程使用 AI 编程工具完成，是「AI+策划+运营」方向的实践作品。</p>
+    <p>PortfolioAI 由 <strong>Duck</strong> 设计开发，旨在帮助创作者快速生成个人作品集网站。全程使用 AI 编程工具完成，是「AI+策划+运营」方向的实践作品。</p>
   </div>
 </div>
 
@@ -921,8 +1097,15 @@ a { color: inherit; text-decoration: none; }
   <!-- Header -->
   <header class="app-header">
     <h1>PortfolioAI</h1>
-    <span class="subtitle">AI 作品集工坊</span>
+    <span class="subtitle" id="headerSubtitle">AI 作品集工坊</span>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:6px">
+      <button class="lang-btn" id="langToggle" data-lang="zh" style="padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-secondary);font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;transition:all 0.2s">中文</button>
+    </div>
   </header>
+  <style>
+    .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .lang-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+  </style>
 
   <!-- Main Content -->
   <div class="main-content">
@@ -941,9 +1124,11 @@ a { color: inherit; text-decoration: none; }
         <div class="template-selector">
           <button class="template-btn active" data-template="minimal" id="tmplMinimal">简洁风</button>
           <button class="template-btn" data-template="colorful" id="tmplColorful">多彩风</button>
+          <button class="template-btn" data-template="business" id="tmplBusiness">商务风</button>
           <div class="template-swatches">
             <span class="swatch swatch-minimal" title="简洁风配色"></span>
             <span class="swatch swatch-colorful" title="多彩风配色"></span>
+            <span class="swatch swatch-business" title="商务风配色"></span>
           </div>
         </div>
       </div>
@@ -1004,6 +1189,50 @@ a { color: inherit; text-decoration: none; }
         </div>
       </div>
 
+      <!-- Work Experience -->
+      <div class="form-card">
+        <h3>
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+          工作经历
+        </h3>
+        <div class="input-group">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+          <textarea id="work1" placeholder="公司/机构名称，职位，时间…" rows="2"></textarea>
+        </div>
+        <div class="input-group">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+          <textarea id="work2" placeholder="第二段工作经历（选填）" rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="form-card">
+        <h3>
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          教育背景
+        </h3>
+        <div class="input-group">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          <textarea id="edu1" placeholder="学校，专业，时间…" rows="2"></textarea>
+        </div>
+        <div class="input-group">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          <textarea id="edu2" placeholder="第二段教育经历（选填）" rows="2"></textarea>
+        </div>
+      </div>
+
       <!-- Projects -->
       <div class="form-card">
         <h3>
@@ -1029,6 +1258,22 @@ a { color: inherit; text-decoration: none; }
             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
           </svg>
           <textarea id="project3" placeholder="项目 3 名称与简介…" rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="form-card">
+        <h3>
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M12 12v4"/><path d="M8 16h8"/><path d="M12 20v-4"/>
+          </svg>
+          证书资质
+        </h3>
+        <div class="input-group">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M12 12v4"/><path d="M8 16h8"/><path d="M12 20v-4"/>
+          </svg>
+          <input type="text" id="certs" placeholder="证书名称（多个用逗号分隔）" autocomplete="off">
         </div>
       </div>
 
@@ -1090,9 +1335,12 @@ a { color: inherit; text-decoration: none; }
               </div>
             </div>
             <p class="preview-bio" id="previewBio"></p>
+            <div class="preview-experience-section" id="previewExperience"></div>
             <div class="preview-skills-section" id="previewSkills"></div>
+            <div class="preview-education-section" id="previewEducation"></div>
             <div class="preview-projects-header" id="previewProjectsTitle">项目</div>
             <div class="preview-projects" id="previewProjects"></div>
+            <div class="preview-certifications-section" id="previewCertifications"></div>
             <div class="preview-social" id="previewSocial"></div>
           </div>
         </div>
@@ -1145,10 +1393,14 @@ a { color: inherit; text-decoration: none; }
   const skillsInput = $('skillsInput');
   const projectEls = [$('project1'), $('project2'), $('project3')];
   const socialEls = [$('social1'), $('social2'), $('social3')];
+  const workEls = [$('work1'), $('work2')];
+  const eduEls = [$('edu1'), $('edu2')];
+  const certsEl = $('certs');
   const aiInput = $('aiInput');
   const aiAnalyzeBtn = $('aiAnalyzeBtn');
   const tmplMinimal = $('tmplMinimal');
   const tmplColorful = $('tmplColorful');
+  const tmplBusiness = $('tmplBusiness');
   const preview = $('preview');
   const previewEmpty = $('previewEmpty');
   const previewContent = $('previewContent');
@@ -1160,6 +1412,9 @@ a { color: inherit; text-decoration: none; }
   const previewProjectsTitle = $('previewProjectsTitle');
   const previewProjects = $('previewProjects');
   const previewSocial = $('previewSocial');
+  const previewExperience = $('previewExperience');
+  const previewEducation = $('previewEducation');
+  const previewCertifications = $('previewCertifications');
   const previewActions = $('previewActions');
   const generateBtn = $('generateBtn');
   const clearBtn = $('clearBtn');
@@ -1173,6 +1428,233 @@ a { color: inherit; text-decoration: none; }
   /* ---- State ---- */
   let currentTemplate = 'minimal';
   let generated = false;
+  let currentLang = 'zh';
+
+  /* ---- i18n ---- */
+  const i18n = {
+    zh: {
+      headerSubtitle: 'AI 作品集工坊',
+      selectTemplate: '选择模板',
+      tmplMinimal: '简洁风',
+      tmplColorful: '多彩风',
+      tmplBusiness: '商务风',
+      aiTitle: 'AI 智能分析',
+      aiPlaceholder: '用一段话介绍你自己，包括你的专业、技能、项目经历和想做的事…\n\n例如：我是北京大学动画专业大二学生，熟练使用 Blender 和 After Effects。做过一个独立动画短片《星途》，在国内学生动画节中入围。还参与过一个商业广告项目，负责角色建模。正在学习 Unreal Engine，希望往游戏动画方向发展。',
+      aiHint: '填写一段话描述自己 → 点击分析 → AI 自动提取姓名、专业、技能、项目信息。API Key 已配置在服务端，无需填写。',
+      aiBtn: 'AI 智能分析',
+      aiBtnBusy: '分析中...',
+      aiDone: 'AI 分析完成！已自动填充表单',
+      aiEmpty: 'AI 分析完成，但未提取到信息，可手动填写',
+      aiFail: 'AI 分析失败：',
+      aiNoText: '请先输入一段自我介绍',
+      personalInfo: '个人信息',
+      namePlaceholder: '你的名字',
+      majorPlaceholder: '你的专业 / 方向',
+      bioPlaceholder: '一句话介绍你自己…',
+      skillsPlaceholder: '技能标签，用逗号分隔（如：Blender, AE, Unreal）',
+      workExp: '工作经历',
+      workPlaceholder1: '公司/机构名称，职位，时间…',
+      workPlaceholder2: '第二段工作经历（选填）',
+      education: '教育背景',
+      eduPlaceholder1: '学校，专业，时间…',
+      eduPlaceholder2: '第二段教育经历（选填）',
+      projects: '项目经历（最多 3 个）',
+      projectPlaceholder: (n) => `项目 ${n} 名称与简介…`,
+      certs: '证书资质',
+      certsPlaceholder: '证书名称（多个用逗号分隔）',
+      socialLinks: '社交链接（选填）',
+      socialPlaceholder1: 'https://github.com/你的名字',
+      socialPlaceholder2: 'https://xiaohongshu.com/你的主页',
+      socialPlaceholder3: '其他链接…',
+      generate: '生成作品集',
+      generating: '✨ 生成中...',
+      generated: '作品集已生成！',
+      clear: '清空',
+      clearConfirm: '确定要清空所有内容吗？',
+      cleared: '已清空',
+      noName: '请至少填写你的名字',
+      noGenerate: '请先生成作品集',
+      download: '下载 HTML',
+      export: '导出为图片',
+      exporting: '导出中...',
+      exportFail: '导出失败，请重试',
+      loadFail: '无法加载截图库，请检查网络连接',
+      previewName: '你的名字',
+      sectionSkills: '技能',
+      sectionExp: '工作经历',
+      sectionEdu: '教育背景',
+      sectionProjects: '项目',
+      sectionCerts: '证书资质',
+      previewEmpty: '填写左侧信息\n实时预览你的个人档案',
+      footer: 'Made with PortfolioAI | 用AI生成你的作品集',
+      aboutTitle: '关于 PortfolioAI',
+      aboutText: 'PortfolioAI 由 <strong>Duck</strong> 设计开发，旨在帮助创作者快速生成个人作品集网站。全程使用 AI 编程工具完成，是「AI+策划+运营」方向的实践作品。',
+      langSwitch: 'English',
+      toastSaved: '已保存',
+      aiErrorEmpty: 'AI 返回为空，请重试',
+      aiErrorFormat: 'AI 返回格式异常',
+      aiErrorData: 'AI 返回数据结构异常',
+      serverError: '服务器错误 ',
+    },
+    en: {
+      headerSubtitle: 'AI Portfolio Workshop',
+      selectTemplate: 'Template',
+      tmplMinimal: 'Minimal',
+      tmplColorful: 'Colorful',
+      tmplBusiness: 'Business',
+      aiTitle: 'AI Analysis',
+      aiPlaceholder: 'Describe yourself in a few sentences, including your major, skills, projects and what you want to do…\n\nFor example: I am a sophomore majoring in Animation at Peking University. I am proficient in Blender and After Effects. I made an independent animated short film "Star Journey" which was selected in a student animation festival. I also participated in a commercial project doing character modeling. I am learning Unreal Engine and want to pursue game animation.',
+      aiHint: 'Write about yourself → Click Analyze → AI extracts name, major, skills, projects automatically. API Key is configured on the server.',
+      aiBtn: 'AI Analysis',
+      aiBtnBusy: 'Analyzing...',
+      aiDone: 'AI analysis complete! Form auto-filled',
+      aiEmpty: 'Analysis complete, but no info extracted. You can fill manually',
+      aiFail: 'AI analysis failed: ',
+      aiNoText: 'Please enter a self-introduction first',
+      personalInfo: 'Personal Info',
+      namePlaceholder: 'Your Name',
+      majorPlaceholder: 'Your Major / Field',
+      bioPlaceholder: 'A brief bio about yourself…',
+      skillsPlaceholder: 'Skills, separated by commas (e.g. Blender, AE, Unreal)',
+      workExp: 'Work Experience',
+      workPlaceholder1: 'Company, position, duration…',
+      workPlaceholder2: 'Second work experience (optional)',
+      education: 'Education',
+      eduPlaceholder1: 'School, major, duration…',
+      eduPlaceholder2: 'Second education entry (optional)',
+      projects: 'Projects (max 3)',
+      projectPlaceholder: (n) => `Project ${n} name & description…`,
+      certs: 'Certifications',
+      certsPlaceholder: 'Certification names (comma separated)',
+      socialLinks: 'Social Links (optional)',
+      socialPlaceholder1: 'https://github.com/yourname',
+      socialPlaceholder2: 'https://twitter.com/yourname',
+      socialPlaceholder3: 'Other links…',
+      generate: 'Generate Portfolio',
+      generating: '✨ Generating...',
+      generated: 'Portfolio generated!',
+      clear: 'Clear',
+      clearConfirm: 'Clear all content?',
+      cleared: 'Cleared',
+      noName: 'Please enter your name',
+      noGenerate: 'Please generate the portfolio first',
+      download: 'Download HTML',
+      export: 'Export PNG',
+      exporting: 'Exporting...',
+      exportFail: 'Export failed, please retry',
+      loadFail: 'Failed to load screenshot library, check network',
+      previewName: 'Your Name',
+      sectionSkills: 'Skills',
+      sectionExp: 'Experience',
+      sectionEdu: 'Education',
+      sectionProjects: 'Projects',
+      sectionCerts: 'Certifications',
+      previewEmpty: 'Fill in the form on the left\nLive preview of your profile',
+      footer: 'Made with PortfolioAI | Generate your portfolio with AI',
+      aboutTitle: 'About PortfolioAI',
+      aboutText: 'PortfolioAI was designed and developed by <strong>Duck</strong> to help creators quickly generate personal portfolio websites. Built entirely with AI coding tools, it is a practice work in the "AI + Planning + Operations" direction.',
+      langSwitch: '中文',
+      toastSaved: 'Saved',
+      aiErrorEmpty: 'AI returned empty, please retry',
+      aiErrorFormat: 'AI returned invalid format',
+      aiErrorData: 'AI returned unexpected data structure',
+      serverError: 'Server error ',
+    }
+  };
+
+  /* ---- i18n: Apply Language ---- */
+  function applyLanguage() {
+    const t = i18n[currentLang];
+    const isZh = currentLang === 'zh';
+
+    // Header
+    $('headerSubtitle').textContent = t.headerSubtitle;
+    $('langToggle').textContent = t.langSwitch;
+
+    // Template buttons
+    tmplMinimal.textContent = t.tmplMinimal;
+    tmplColorful.textContent = t.tmplColorful;
+    tmplBusiness.textContent = t.tmplBusiness;
+
+    // Form card titles (h3 text node after SVG icon)
+    const titleMap = [
+      'selectTemplate', 'aiTitle', 'personalInfo', 'workExp',
+      'education', 'projects', 'certs', 'socialLinks'
+    ];
+    document.querySelectorAll('.form-card > h3').forEach((h3, i) => {
+      if (i < titleMap.length) {
+        const nodes = h3.childNodes;
+        for (let j = nodes.length - 1; j >= 0; j--) {
+          if (nodes[j].nodeType === Node.TEXT_NODE && nodes[j].textContent.trim()) {
+            nodes[j].textContent = ' ' + t[titleMap[i]] + ' ';
+            break;
+          }
+        }
+      }
+    });
+
+    // AI section
+    aiInput.placeholder = t.aiPlaceholder;
+    aiAnalyzeBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> ' + t.aiBtn;
+    const aiHint = aiInput.parentElement.querySelector('.ai-hint');
+    if (aiHint) aiHint.textContent = t.aiHint;
+
+    // Form placeholders
+    nameEl.placeholder = t.namePlaceholder;
+    majorEl.placeholder = t.majorPlaceholder;
+    bioEl.placeholder = t.bioPlaceholder;
+    skillsInput.placeholder = t.skillsPlaceholder;
+    workEls[0].placeholder = t.workPlaceholder1;
+    workEls[1].placeholder = t.workPlaceholder2;
+    eduEls[0].placeholder = t.eduPlaceholder1;
+    eduEls[1].placeholder = t.eduPlaceholder2;
+    projectEls[0].placeholder = t.projectPlaceholder(1);
+    projectEls[1].placeholder = t.projectPlaceholder(2);
+    projectEls[2].placeholder = t.projectPlaceholder(3);
+    certsEl.placeholder = t.certsPlaceholder;
+    socialEls[0].placeholder = t.socialPlaceholder1;
+    socialEls[1].placeholder = t.socialPlaceholder2;
+    socialEls[2].placeholder = t.socialPlaceholder3;
+
+    // Buttons
+    generateBtn.textContent = t.generate;
+    clearBtn.textContent = t.clear;
+    downloadBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> ' + t.download;
+    exportBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> ' + t.export;
+
+    // Preview elements
+    const emptyP = previewEmpty.querySelector('p');
+    if (emptyP) emptyP.textContent = t.previewEmpty;
+    previewProjectsTitle.textContent = t.sectionProjects;
+
+    // Footer
+    const footerText = document.querySelector('.app-footer .footer-text');
+    if (footerText) footerText.textContent = t.footer;
+
+    // About modal
+    const aboutTitle = infoOverlay.querySelector('h3');
+    const aboutText = infoOverlay.querySelector('p');
+    if (aboutTitle) aboutTitle.textContent = t.aboutTitle;
+    if (aboutText) aboutText.innerHTML = t.aboutText;
+
+    // Toast messages rely on runtime calls, already use translated strings
+    // Re-render preview to update section titles
+    renderPreview();
+
+    // Save preference
+    try { localStorage.setItem('portfolioAI_lang', currentLang); } catch(e) {}
+  }
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    applyLanguage();
+  }
+
+  /* ---- i18n helper for runtime messages ---- */
+  function __(key) {
+    const val = i18n[currentLang][key];
+    return val !== undefined ? val : key;
+  }
 
   /* ---- Skill Tag Colors ---- */
   const SKILL_COLORS = ['#3B82F6','#8B5CF6','#EC4899','#10B981','#F59E0B','#EF4444','#06B6D4','#84CC16'];
@@ -1211,6 +1693,9 @@ a { color: inherit; text-decoration: none; }
       bio: bioEl.value.trim(),
       skills: skillsInput.value.trim(),
       projects: projectEls.map(el => el.value.trim()).filter(Boolean),
+      work_experience: workEls.map(el => el.value.trim()).filter(Boolean),
+      education: eduEls.map(el => el.value.trim()).filter(Boolean),
+      certifications: certsEl.value.trim(),
       socials: socialEls.map(el => el.value.trim()).filter(Boolean)
     };
   }
@@ -1229,7 +1714,7 @@ a { color: inherit; text-decoration: none; }
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.error || '服务器错误 ' + response.status);
+      throw new Error(data.error || __('serverError') + response.status);
     }
     return data;
   }
@@ -1238,18 +1723,18 @@ a { color: inherit; text-decoration: none; }
   async function handleAIAnalyze() {
     const text = aiInput.value.trim();
     if (!text) {
-      showToast('请先输入一段自我介绍');
+      showToast(__('aiNoText'));
       aiInput.focus();
       return;
     }
 
     aiAnalyzeBtn.disabled = true;
-    aiAnalyzeBtn.innerHTML = '<span class="spinner"></span> 分析中...';
+    aiAnalyzeBtn.innerHTML = '<span class="spinner"></span> ' + __('aiBtnBusy');
 
     try {
       const result = await callLocalAPI(text);
       const content = result.choices?.[0]?.message?.content || '';
-      if (!content) throw new Error('AI 返回为空，请重试');
+      if (!content) throw new Error(__('aiErrorEmpty'));
 
       let parsed;
       try {
@@ -1257,11 +1742,11 @@ a { color: inherit; text-decoration: none; }
       } catch (e) {
         const match = content.match(/\{[\s\S]*\}/);
         if (match) parsed = JSON.parse(match[0]);
-        else throw new Error('AI 返回格式异常');
+        else throw new Error(__('aiErrorFormat'));
       }
 
       if (!parsed || typeof parsed !== 'object') {
-        throw new Error('AI 返回数据结构异常');
+        throw new Error(__('aiErrorData'));
       }
 
       let changed = false;
@@ -1283,18 +1768,43 @@ a { color: inherit; text-decoration: none; }
         });
       }
 
+      if (parsed.work_experience && Array.isArray(parsed.work_experience)) {
+        parsed.work_experience.slice(0, 2).forEach((item, i) => {
+          if (workEls[i]) {
+            const parts = [item.company || item.name || '', item.position || item.role || '', item.duration || item.time || ''].filter(Boolean);
+            const val = parts.join('\n');
+            if (val.trim()) { workEls[i].value = val; changed = true; }
+          }
+        });
+      }
+
+      if (parsed.education && Array.isArray(parsed.education)) {
+        parsed.education.slice(0, 2).forEach((item, i) => {
+          if (eduEls[i]) {
+            const parts = [item.school || item.name || '', item.major || item.field || '', item.duration || item.time || ''].filter(Boolean);
+            const val = parts.join('\n');
+            if (val.trim()) { eduEls[i].value = val; changed = true; }
+          }
+        });
+      }
+
+      if (parsed.certifications && Array.isArray(parsed.certifications) && parsed.certifications.length > 0) {
+        certsEl.value = parsed.certifications.join(', ');
+        changed = true;
+      }
+
       if (changed) {
         saveToLocalStorage();
         renderPreview();
-        showToast('AI 分析完成！已自动填充表单');
+        showToast(__('aiDone'));
       } else {
-        showToast('AI 分析完成，但未提取到信息，可手动填写');
+        showToast(__('aiEmpty'));
       }
     } catch (e) {
-      showToast('AI 分析失败：' + e.message);
+      showToast(__('aiFail') + e.message);
     } finally {
       aiAnalyzeBtn.disabled = false;
-      aiAnalyzeBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> AI 智能分析';
+      aiAnalyzeBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> ' + __('aiBtn');
     }
   }
 
@@ -1302,7 +1812,7 @@ a { color: inherit; text-decoration: none; }
   function renderPreview() {
     const data = getFormData();
     const skills = getSkillsList();
-    const hasData = data.name || data.major || data.bio || data.projects.length > 0 || skills.length > 0;
+    const hasData = data.name || data.major || data.bio || data.work_experience.length > 0 || data.education.length > 0 || data.projects.length > 0 || data.certifications || skills.length > 0;
 
     if (!hasData && !generated) {
       previewEmpty.style.display = 'flex';
@@ -1318,7 +1828,7 @@ a { color: inherit; text-decoration: none; }
     previewAvatar.textContent = initial;
 
     // Name
-    previewName.textContent = data.name || '你的名字';
+    previewName.textContent = data.name || __('previewName');
 
     // Major
     previewMajor.textContent = data.major || '';
@@ -1328,10 +1838,30 @@ a { color: inherit; text-decoration: none; }
     previewBio.textContent = data.bio || '';
     previewBio.style.display = data.bio ? '' : 'none';
 
+    // Work Experience
+    if (data.work_experience && data.work_experience.length > 0) {
+      previewExperience.innerHTML = `
+        <div class="preview-section-title">${__('sectionExp')}</div>
+        ${data.work_experience.map(item => {
+          const lines = item.split('\n');
+          const title = lines[0] || '';
+          const rest = lines.slice(1).filter(Boolean).join('<br>');
+          return `<div class="timeline-item">
+            <div class="timeline-title">${escapeHtml(title)}</div>
+            ${rest ? '<div class="timeline-sub">' + escapeHtml(rest) + '</div>' : ''}
+          </div>`;
+        }).join('')}
+      `;
+      previewExperience.style.display = '';
+    } else {
+      previewExperience.innerHTML = '';
+      previewExperience.style.display = 'none';
+    }
+
     // Skills
     if (skills.length > 0) {
       previewSkills.innerHTML = `
-        <div class="preview-section-title">技能</div>
+        <div class="preview-section-title">${__('sectionSkills')}</div>
         <div class="skills-tags">
           ${skills.map((s, i) => {
             const c = SKILL_COLORS[i % SKILL_COLORS.length];
@@ -1345,11 +1875,31 @@ a { color: inherit; text-decoration: none; }
       previewSkills.style.display = 'none';
     }
 
+    // Education
+    if (data.education && data.education.length > 0) {
+      previewEducation.innerHTML = `
+        <div class="preview-section-title">${__('sectionEdu')}</div>
+        ${data.education.map(item => {
+          const lines = item.split('\n');
+          const title = lines[0] || '';
+          const rest = lines.slice(1).filter(Boolean).join('<br>');
+          return `<div class="timeline-item">
+            <div class="timeline-title">${escapeHtml(title)}</div>
+            ${rest ? '<div class="timeline-sub">' + escapeHtml(rest) + '</div>' : ''}
+          </div>`;
+        }).join('')}
+      `;
+      previewEducation.style.display = '';
+    } else {
+      previewEducation.innerHTML = '';
+      previewEducation.style.display = 'none';
+    }
+
     // Projects
     const projectCards = data.projects.map(p => {
       const firstLine = p.split('\n')[0];
       const rest = p.substring(firstLine.length).trim();
-      const title = firstLine.replace(/^[#\s]*/, '') || '项目';
+      const title = firstLine.replace(/^[#\s]*/, '') || __('sectionProjects');
       return { title, desc: rest || '' };
     });
 
@@ -1368,6 +1918,26 @@ a { color: inherit; text-decoration: none; }
       previewProjectsTitle.style.display = 'none';
     }
 
+    // Certifications
+    if (data.certifications) {
+      const certList = data.certifications.split(',').map(s => s.trim()).filter(Boolean);
+      if (certList.length > 0) {
+        previewCertifications.innerHTML = `
+          <div class="preview-section-title">${__('sectionCerts')}</div>
+          <div class="certs-list">
+            ${certList.map(c => `<span class="cert-tag">${escapeHtml(c)}</span>`).join('')}
+          </div>
+        `;
+        previewCertifications.style.display = '';
+      } else {
+        previewCertifications.innerHTML = '';
+        previewCertifications.style.display = 'none';
+      }
+    } else {
+      previewCertifications.innerHTML = '';
+      previewCertifications.style.display = 'none';
+    }
+
     // Social
     if (data.socials.length > 0) {
       previewSocial.innerHTML = data.socials.map(url => {
@@ -1383,10 +1953,11 @@ a { color: inherit; text-decoration: none; }
   /* ---- Template Switch ---- */
   function setTemplate(template) {
     currentTemplate = template;
-    preview.classList.remove('preview-template-minimal', 'preview-template-colorful');
+    preview.classList.remove('preview-template-minimal', 'preview-template-colorful', 'preview-template-business');
     preview.classList.add('preview-template-' + template);
     tmplMinimal.classList.toggle('active', template === 'minimal');
     tmplColorful.classList.toggle('active', template === 'colorful');
+    tmplBusiness.classList.toggle('active', template === 'business');
     renderPreview();
     saveToLocalStorage();
   }
@@ -1395,13 +1966,13 @@ a { color: inherit; text-decoration: none; }
   async function handleGenerate() {
     const data = getFormData();
     if (!data.name) {
-      showToast('请至少填写你的名字');
+      showToast(__('noName'));
       nameEl.focus();
       return;
     }
 
     generateBtn.disabled = true;
-    generateBtn.innerHTML = '✨ 生成中...';
+    generateBtn.innerHTML = __('generating');
 
     await new Promise(resolve => setTimeout(resolve, 800));
 
@@ -1411,9 +1982,9 @@ a { color: inherit; text-decoration: none; }
     previewActions.classList.add('visible');
 
     generateBtn.disabled = false;
-    generateBtn.textContent = '生成作品集';
+    generateBtn.textContent = __('generate');
 
-    showToast('作品集已生成！');
+    showToast(__('generated'));
     saveToLocalStorage();
   }
 
@@ -1421,7 +1992,7 @@ a { color: inherit; text-decoration: none; }
   function handleDownload() {
     const data = getFormData();
     if (!data.name) {
-      showToast('请先生成作品集');
+      showToast(__('noGenerate'));
       return;
     }
 
@@ -1436,13 +2007,13 @@ a { color: inherit; text-decoration: none; }
     const footerBorder = isDark ? '#334155' : '#E5E7EB';
 
     const projectCards = data.projects.map(p => {
-      const firstLine = p.split('\n')[0].replace(/^[#\s]*/, '') || '项目';
+      const firstLine = p.split('\n')[0].replace(/^[#\s]*/, '') || __('sectionProjects');
       const rest = p.substring(p.indexOf('\n') + 1).trim();
       return `<div class="project-card"><strong>${escapeHtml(firstLine)}</strong>${rest ? '<br>' + escapeHtml(rest) : ''}</div>`;
     }).join('');
 
     const skillsHTML = skills.length > 0 ? `
-      <div class="preview-section-title">技能</div>
+      <div class="preview-section-title">${__('sectionSkills')}</div>
       <div class="skills-tags">
         ${skills.map((s, i) => {
           const c = SKILL_COLORS[i % SKILL_COLORS.length];
@@ -1457,12 +2028,38 @@ a { color: inherit; text-decoration: none; }
     const majorDisplay = data.major ? `<p class="major">${escapeHtml(data.major)}</p>` : '';
     const bioDisplay = data.bio ? `<p class="bio">${escapeHtml(data.bio)}</p>` : '';
 
+    const workExpHTML = data.work_experience.length > 0 ? `
+      <div class="preview-section-title">${__('sectionExp')}</div>
+      ${data.work_experience.map(item => {
+        const lines = item.split('\n');
+        const title = lines[0] || '';
+        const rest = lines.slice(1).filter(Boolean).join('<br>');
+        return '<div class="timeline-item"><div class="timeline-title">' + escapeHtml(title) + '</div>' + (rest ? '<div class="timeline-sub">' + escapeHtml(rest) + '</div>' : '') + '</div>';
+      }).join('')}
+    ` : '';
+    const eduHTML = data.education.length > 0 ? `
+      <div class="preview-section-title">${__('sectionEdu')}</div>
+      ${data.education.map(item => {
+        const lines = item.split('\n');
+        const title = lines[0] || '';
+        const rest = lines.slice(1).filter(Boolean).join('<br>');
+        return '<div class="timeline-item"><div class="timeline-title">' + escapeHtml(title) + '</div>' + (rest ? '<div class="timeline-sub">' + escapeHtml(rest) + '</div>' : '') + '</div>';
+      }).join('')}
+    ` : '';
+    const certList = data.certifications ? data.certifications.split(',').map(s => s.trim()).filter(Boolean) : [];
+    const certsHTML = certList.length > 0 ? `
+      <div class="preview-section-title">${__('sectionCerts')}</div>
+      <div class="certs-list">
+        ${certList.map(c => '<span class="cert-tag">' + escapeHtml(c) + '</span>').join('')}
+      </div>
+    ` : '';
+
     const html = `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${escapeHtml(data.name)}的作品集 - PortfolioAI</title>
+<title>${escapeHtml(data.name)} - PortfolioAI</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -1497,6 +2094,12 @@ a { color: inherit; text-decoration: none; }
   .project-card:last-child { margin-bottom: 0; }
   .skills-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
   .skill-tag { display: inline-flex; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1px solid; line-height: 1.5; }
+  .timeline-item { padding: 12px 0; border-bottom: 1px solid ${footerBorder}; font-size: 14px; line-height: 1.6; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-item .timeline-title { font-weight: 600; }
+  .timeline-item .timeline-sub { color: ${footerColor}; font-size: 13px; margin-top: 2px; }
+  .certs-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .cert-tag { display: inline-flex; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; background: ${isDark ? '#1E3A5F' : '#EFF6FF'}; color: ${isDark ? '#60A5FA' : '#3B82F6'}; }
   .footer {
     text-align: center;
     padding: 28px 0 0;
@@ -1522,10 +2125,13 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
   ${bioDisplay}
+  ${workExpHTML}
   ${skillsHTML}
-  ${data.projects.length > 0 ? '<div class="preview-section-title">项目</div>' + projectCards : ''}
+  ${eduHTML}
+  ${data.projects.length > 0 ? '<div class="preview-section-title">' + __('sectionProjects') + '</div>' + projectCards : ''}
+  ${certsHTML}
   ${data.socials.length > 0 ? '<div class="preview-social">' + socialLinks + '</div>' : ''}
-  <div class="footer">Made with PortfolioAI | 用AI生成你的作品集</div>
+  <div class="footer">${__('footer')}</div>
 </div>
 </body>
 </html>`;
@@ -1540,7 +2146,7 @@ a { color: inherit; text-decoration: none; }
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showToast('HTML 文件已下载！');
+    showToast(__('download') + ' ✓');
   }
 
   function getTemplateCSS(template, isDark) {
@@ -1593,6 +2199,45 @@ a { color: inherit; text-decoration: none; }
         .social-icon svg { width: 18px; height: 18px; }
       `;
     }
+    // Business
+    if (template === 'business') {
+      if (d) {
+        return `
+          .preview-avatar {
+            width: 76px; height: 76px; border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; font-weight: 600;
+            background: #E4E6EA; color: #1E2028;
+          }
+          .preview-name { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.15; color: #F1F3F5; font-family: Inter, 'SF Pro Text', system-ui, sans-serif; }
+          .major { font-size: 14px; font-weight: 500; color: #fff; display: inline-block; background: #5B7FFF; padding: 4px 16px; border-radius: 6px; margin-bottom: 16px; letter-spacing: 0.2px; }
+          .bio { font-size: 16px; line-height: 1.7; color: #9CA3AF; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #353840; }
+          .preview-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #9CA3AF; margin-bottom: 14px; font-family: Inter, 'SF Pro Text', system-ui, sans-serif; }
+          .project-card { padding: 18px 20px; border-radius: 10px; font-size: 14px; line-height: 1.6; color: #F1F3F5; background: #1E2028; border: 1px solid #353840; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+          .preview-social { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 24px; }
+          .social-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #353840; color: #9CA3AF; transition: all 0.2s; }
+          .social-icon:hover { border-color: #5B7FFF; color: #5B7FFF; background: #2A2D34; }
+          .social-icon svg { width: 18px; height: 18px; }
+        `;
+      }
+      return `
+        .preview-avatar {
+          width: 76px; height: 76px; border-radius: 20px;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 30px; font-weight: 600;
+          background: #1A1A2E; color: #fff;
+        }
+        .preview-name { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.15; color: #111111; font-family: Inter, 'SF Pro Text', system-ui, -apple-system, sans-serif; }
+        .major { font-size: 14px; font-weight: 500; color: #fff; display: inline-block; background: #2D5BFF; padding: 4px 16px; border-radius: 6px; margin-bottom: 16px; letter-spacing: 0.2px; }
+        .bio { font-size: 16px; line-height: 1.7; color: #6B7280; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #E2E5EA; }
+        .preview-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6B7280; margin-bottom: 14px; font-family: Inter, 'SF Pro Text', system-ui, sans-serif; }
+        .project-card { padding: 18px 20px; border-radius: 10px; font-size: 14px; line-height: 1.6; background: #fff; border: 1px solid #E2E5EA; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .preview-social { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 24px; }
+        .social-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #E2E5EA; color: #6B7280; transition: all 0.2s; }
+        .social-icon:hover { border-color: #2D5BFF; color: #2D5BFF; }
+        .social-icon svg { width: 18px; height: 18px; }
+      `;
+    }
     // Minimal
     if (d) {
       return `
@@ -1636,7 +2281,7 @@ a { color: inherit; text-decoration: none; }
   async function handleExport() {
     const data = getFormData();
     if (!data.name) {
-      showToast('请先生成作品集');
+      showToast(__('noGenerate'));
       return;
     }
 
@@ -1650,14 +2295,14 @@ a { color: inherit; text-decoration: none; }
           document.head.appendChild(script);
         });
       } catch (e) {
-        showToast('无法加载截图库，请检查网络连接');
+        showToast(__('loadFail'));
         return;
       }
     }
 
     try {
       exportBtn.disabled = true;
-      exportBtn.textContent = '导出中...';
+      exportBtn.textContent = __('exporting');
 
       const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const bgColor = isDark ? '#1E293B' : '#FFFFFF';
@@ -1675,18 +2320,18 @@ a { color: inherit; text-decoration: none; }
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      showToast('图片已导出！');
+      showToast(__('export') + ' ✓');
     } catch (e) {
-      showToast('导出失败，请重试');
+      showToast(__('exportFail'));
     } finally {
       exportBtn.disabled = false;
-      exportBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> 导出为图片';
+      exportBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> ' + __('export');
     }
   }
 
   /* ---- Clear ---- */
   function handleClear() {
-    if (!confirm('确定要清空所有内容吗？')) return;
+    if (!confirm(__('clearConfirm'))) return;
 
     aiInput.value = '';
     nameEl.value = '';
@@ -1694,6 +2339,9 @@ a { color: inherit; text-decoration: none; }
     bioEl.value = '';
     skillsInput.value = '';
     projectEls.forEach(el => el.value = '');
+    workEls.forEach(el => el.value = '');
+    eduEls.forEach(el => el.value = '');
+    if (certsEl) certsEl.value = '';
     socialEls.forEach(el => el.value = '');
 
     generated = false;
@@ -1702,7 +2350,7 @@ a { color: inherit; text-decoration: none; }
     previewEmpty.style.display = 'flex';
 
     localStorage.removeItem('portfolioAI_formData');
-    showToast('已清空');
+    showToast(__('cleared'));
   }
 
   /* ---- Toast ---- */
@@ -1730,6 +2378,11 @@ a { color: inherit; text-decoration: none; }
       project1: projectEls[0]?.value || '',
       project2: projectEls[1]?.value || '',
       project3: projectEls[2]?.value || '',
+      work1: workEls[0]?.value || '',
+      work2: workEls[1]?.value || '',
+      edu1: eduEls[0]?.value || '',
+      edu2: eduEls[1]?.value || '',
+      certs: certsEl?.value || '',
       social1: socialEls[0]?.value || '',
       social2: socialEls[1]?.value || '',
       social3: socialEls[2]?.value || '',
@@ -1751,6 +2404,11 @@ a { color: inherit; text-decoration: none; }
       projectEls[0].value = data.project1 || '';
       projectEls[1].value = data.project2 || '';
       projectEls[2].value = data.project3 || '';
+      if (workEls[0]) workEls[0].value = data.work1 || '';
+      if (workEls[1]) workEls[1].value = data.work2 || '';
+      if (eduEls[0]) eduEls[0].value = data.edu1 || '';
+      if (eduEls[1]) eduEls[1].value = data.edu2 || '';
+      if (certsEl) certsEl.value = data.certs || '';
       socialEls[0].value = data.social1 || '';
       socialEls[1].value = data.social2 || '';
       socialEls[2].value = data.social3 || '';
@@ -1779,11 +2437,26 @@ a { color: inherit; text-decoration: none; }
       history.replaceState(null, '', location.pathname);
     }
     loadFromLocalStorage();
+
+    // i18n init
+    const savedLang = localStorage.getItem('portfolioAI_lang');
+    if (savedLang === 'en' || savedLang === 'zh') {
+      currentLang = savedLang;
+    }
+    applyLanguage();
+
     renderPreview();
+
+    // Language toggle
+    const langToggle = $('langToggle');
+    langToggle.addEventListener('click', () => {
+      setLanguage(currentLang === 'zh' ? 'en' : 'zh');
+    });
 
     // Template buttons
     tmplMinimal.addEventListener('click', () => setTemplate('minimal'));
     tmplColorful.addEventListener('click', () => setTemplate('colorful'));
+    tmplBusiness.addEventListener('click', () => setTemplate('business'));
 
     // AI Analyze
     aiAnalyzeBtn.addEventListener('click', handleAIAnalyze);
@@ -1809,7 +2482,7 @@ a { color: inherit; text-decoration: none; }
     });
 
     // Auto-save & live preview
-    const allInputs = [nameEl, majorEl, bioEl, skillsInput, ...projectEls, ...socialEls];
+    const allInputs = [nameEl, majorEl, bioEl, skillsInput, ...projectEls, ...workEls, ...eduEls, certsEl, ...socialEls];
     const saveAndRender = debounce(() => {
       saveToLocalStorage();
       renderPreview();
